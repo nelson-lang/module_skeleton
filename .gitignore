@@ -58,7 +58,8 @@ builtin/cleaner.nls
 builtin/cmake_install.cmake
 builtin/loader.nls
 builtin/unloader.nls
-help/en_US/org.nelson.modules.module_skeleton.help.qch
+builtin/cpp/Gateway.cpp
+help/en_US/org.nelson.modules.*.help.qch
 src/CMakeCache.txt
 src/CMakeFiles/
 src/CMakeLists.txt
