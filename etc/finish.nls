@@ -25,5 +25,4 @@
 //=============================================================================
 rmpath([fileparts(nfilename('fullpath')), '/../functions']);
 removegateway([fileparts(nfilename('fullpath')), '/../builtin/', 'module_skeleton', getdynlibext()]);
-run([fileparts(nfilename('fullpath')), '/../src/loader.nls']);
 //=============================================================================
