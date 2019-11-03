@@ -2,17 +2,17 @@
   "module": "module_skeleton",
   "title": "Module skeleton",
   "summary": "Skeleton of a valid nelson package",
-  "version": [1, 0, 0],
+  "version": "1.0.0",
   "platforms": "all",
   "builtin": true,
   "description": "nelson's module skeleton",
-  "copyright": "Copyright © 2019--present Allan CORNET",
+  "copyright": "Copyright © 2019-present Allan CORNET",
   "author": {
     "name": "Allan CORNET",
     "email": "nelson.numerical.computation@gmail.com",
     "url": "https://nelson-numerical-software.github.io/nelson-website/"
   },
-  "license": "LGPL-2.0",
+  "license": "BSD",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nelson-numerical-software/module_skeleton.git"
@@ -21,7 +21,8 @@
     "interpreter",
     "scientific-computing",
     "programming-language",
-    "matrix-functions"
+    "matrix-functions",
+    "skeleton"
   ],
   "bugs": {
     "url": "https://github.com/Nelson-numerical-software/module_skeleton/issues"
