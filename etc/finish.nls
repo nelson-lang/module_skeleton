@@ -13,3 +13,5 @@ run([fileparts(nfilename('fullpath')), '/../src/unloader.nls']);
 // remove macros
 rmpath([fileparts(nfilename('fullpath')), '/../functions']);
 //=============================================================================
+clear('MODULE_NAME');
+//=============================================================================

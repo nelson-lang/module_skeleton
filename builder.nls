@@ -27,5 +27,5 @@ nmm_build_loader(MODULE_NAME, fileparts(nfilename('fullpath')));
 //=============================================================================
 nmm_build_help(MODULE_NAME, fileparts(nfilename('fullpath')));
 //=============================================================================
-clear(MODULE_NAME);
+clear('MODULE_NAME');
 //=============================================================================

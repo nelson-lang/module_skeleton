@@ -13,3 +13,5 @@ addgateway([fileparts(nfilename('fullpath')), '/../builtin/', [MODULE_NAME, '_bu
 // load macros
 addpath([fileparts(nfilename('fullpath')), '/../functions']);
 //=============================================================================
+clear('MODULE_NAME');
+//=============================================================================
