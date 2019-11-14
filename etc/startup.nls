@@ -7,7 +7,8 @@
 run([fileparts(nfilename('fullpath')), '/../src/loader.nls']);
 //=============================================================================
 // load C/C++ gateway
-addgateway([fileparts(nfilename('fullpath')), '/../builtin/', 'module_skeleton', getdynlibext()]);
+MODULE_NAME = 'module_skeleton';
+addgateway([fileparts(nfilename('fullpath')), '/../builtin/', [MODULE_NAME, '_builtin'], getdynlibext()]);
 //=============================================================================
 // load macros
 addpath([fileparts(nfilename('fullpath')), '/../functions']);

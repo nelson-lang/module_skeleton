@@ -5,15 +5,16 @@
 //=============================================================================
 currentpath = fileparts(nfilename('fullpathext'));
 [status, message] = dlgeneratemake(currentpath, ...
-        'business_code', ...
+        MODULE_NAME, ...
         [currentpath, '/cpp/cpp_sum.cpp'], ...
         [currentpath, '/include']);
 if ~status
   error(message);
 end
 dlgeneratecleaner(currentpath);
-dlgenerateloader(currentpath, 'business_code');
-dlgenerateunloader(currentpath, 'business_code');
+dlgenerateloader(currentpath, MODULE_NAME);
+dlgenerateunloader(currentpath, MODULE_NAME);
+//=============================================================================
 [status, message] = dlmake(currentpath);
 if ~status
   error(message);

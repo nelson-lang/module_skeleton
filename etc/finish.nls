@@ -4,7 +4,8 @@
 // This file is released under the 3-clause BSD license. See COPYING-BSD.
 //=============================================================================
 // remove C/C++ gateway
-removegateway([fileparts(nfilename('fullpath')), '/../builtin/', 'module_skeleton', getdynlibext()]);
+MODULE_NAME = 'module_skeleton';
+removegateway([fileparts(nfilename('fullpath')), '/../builtin/', [MODULE_NAME, '_builtin'], getdynlibext()]);
 //=============================================================================
 // remove C/C++ code associated to the previous gateway
 run([fileparts(nfilename('fullpath')), '/../src/unloader.nls']);
