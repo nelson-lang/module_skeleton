@@ -49,4 +49,5 @@ src/cmake_install.cmake
 src/loader.nls
 src/unloader.nls
 loader.nls
+module-lock.json
 #==============================================================================
