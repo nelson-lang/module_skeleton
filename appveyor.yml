@@ -9,7 +9,7 @@ environment:
   NELSON_URL: http://nelson.surge.sh
 # NELSON_URL: https://github.com/Nelson-numerical-software/nelson/releases/download/v%NELSON_USED%  
   BUILD_CHAIN_DIR: c:\build_chain\module
-  MODULE_GIT_URL: https://github.com/Nelson-numerical-software/module_skeleton.git#%APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH%
+  MODULE_GIT_URL: https://github.com/Nelson-numerical-software/module_skeleton.git#%APPVEYOR_REPO_COMMIT%
   DESTINATION_DIRECTORY: c:\build_chain\module
 
 branches:
@@ -25,7 +25,7 @@ install:
 - if %platform%==x64 (set NELSON_PLATFORM=x64) else (set NELSON_PLATFORM=win32)
 - set URL=%NELSON_URL%/Nelson-%NELSON_USED%.%NELSON_BUILD%-%NELSON_ARCH%.zip
 - ps: (new-object net.webclient).DownloadFile($env:URL, "C:\build_chain\nelson.zip")
-- 7z x -y C:\build_chain\nelson.zip -oC:\build_chain
+- 7z x -y C:\build_chain\nelson.zip -oC:\build_chain 1>NUL
 
 build_script:
 - C:\build_chain\Nelson-%NELSON_USED%.%NELSON_BUILD%\bin\%NELSON_PLATFORM%\nelson-adv-cli.exe --quiet -f C:\build_chain\Nelson-%NELSON_USED%.%NELSON_BUILD%\tools\module_CI\module_CI.nls
