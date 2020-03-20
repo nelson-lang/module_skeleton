@@ -7,7 +7,7 @@
 #include "cpp_sum.hpp"
 #include "Error.hpp"
 //=============================================================================
-ArrayOfVector cpp_sumBuiltin(Evaluator* eval, int nLhs, const ArrayOfVector& argIn)
+ArrayOfVector cpp_sumBuiltin(int nLhs, const ArrayOfVector& argIn)
 {
     ArrayOfVector retval;
     if (argIn.size() != 2)

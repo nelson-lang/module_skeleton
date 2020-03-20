@@ -1,10 +1,10 @@
-version: 1.0.{build}
+version: 2.0.{build}
 image: Visual Studio 2019
 
 environment:
   VS_VERSION: vs2019
   MODULE_NAME: module_skeleton
-  NELSON_USED: 0.3.11
+  NELSON_USED: 0.4.4
   NELSON_BUILD: 2305
   NELSON_URL: http://nelson.surge.sh
 # NELSON_URL: https://github.com/Nelson-numerical-software/nelson/releases/download/v%NELSON_USED%  
