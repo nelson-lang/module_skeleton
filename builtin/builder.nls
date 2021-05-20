@@ -1,8 +1,8 @@
-//=============================================================================
-// Copyright (c) 2018-present Allan CORNET (Nelson)
-//
-// This file is released under the 3-clause BSD license. See COPYING-BSD.
-//=============================================================================
+%=============================================================================
+% Copyright (c) 2018-present Allan CORNET (Nelson)
+%
+% This file is released under the 3-clause BSD license. See COPYING-BSD.
+%=============================================================================
 currentpath = fileparts(nfilename('fullpathext'));
 dlgeneratecleaner(currentpath);
 dlgenerategateway([currentpath, '/cpp/'], 'module_skeleton', {{'cpp_sum', 1, 2}})
@@ -21,8 +21,8 @@ dlgenerateunloader(currentpath, 'module_skeleton');
 if ~status
   error(message);
 end
-//=============================================================================
+%=============================================================================
 clear('status');
 clear('message');
 clear('currentpath');
-//=============================================================================
+%=============================================================================

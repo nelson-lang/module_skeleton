@@ -34,6 +34,7 @@ builtin/CMakeCache.txt
 builtin/CMakeFiles/
 builtin/CMakeLists.txt
 builtin/Makefile
+builtin/*.manifest
 builtin/cleaner.nls
 builtin/cmake_install.cmake
 builtin/loader.nls
@@ -41,6 +42,7 @@ builtin/unloader.nls
 builtin/cpp/Gateway.cpp
 help/en_US/org.nelson.modules.*.help.qch
 src/CMakeCache.txt
+src/*.manifest
 src/CMakeFiles/
 src/CMakeLists.txt
 src/Makefile
