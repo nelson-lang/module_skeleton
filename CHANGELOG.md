@@ -1,4 +1,4 @@
-# 1.1.0 (UNRELEASED)
+# 2.0.0 (05/20/2021)
 
 - uses validators functions,
 - comments moved from '//' to '%',
@@ -6,6 +6,7 @@
 - appveyor CI,
 - CHANGELOG.md added,
 - module-lock.json added to .gitignore
+- requires nelson 0.5.5.
 
 # 1.0.0
 
