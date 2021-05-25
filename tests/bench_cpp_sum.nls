@@ -1,0 +1,13 @@
+%=============================================================================
+% Copyright (c) 2018-present Allan CORNET (Nelson)
+%
+% This file is released under the 3-clause BSD license. See COPYING-BSD.
+%=============================================================================
+if ~ismodule('module_skeleton')
+    run([fileparts(nfilename('fullpathext')), '/../loader.nls']);
+end
+%=============================================================================
+tic();
+R = cpp_sum(3, 4);
+toc();
+%=============================================================================
