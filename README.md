@@ -12,13 +12,13 @@ nmm('install', 'https://github.com/Nelson-numerical-software/module_skeleton#mas
 ## Build module:
 
 ```
-run('builder.nls')
+run('builder.m')
 ```
 
 ## Load module:
 
 ```
-run('loader.nls')
+run('loader.m')
 ```
 
 Allan CORNET (nelson.numerical.computation@gmail.com)

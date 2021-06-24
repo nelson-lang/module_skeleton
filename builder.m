@@ -17,10 +17,10 @@ fprintf(_('Building ''%s'' dependencies.\n'), MODULE_NAME);
 nmm_build_dependencies(fileparts(nfilename('fullpath')));
 %=============================================================================
 fprintf(_('Building ''%s'' sources.\n'), MODULE_NAME);
-run([fileparts(nfilename('fullpath')), '/src/builder.nls']);
+run([fileparts(nfilename('fullpath')), '/src/builder.m']);
 %=============================================================================
 fprintf(_('Building ''%s'' builtin.\n'), MODULE_NAME);
-run([fileparts(nfilename('fullpath')), '/builtin/builder.nls']);
+run([fileparts(nfilename('fullpath')), '/builtin/builder.m']);
 %=============================================================================
 fprintf(_('Building ''%s'' loader.\n'), MODULE_NAME);
 nmm_build_loader(MODULE_NAME, fileparts(nfilename('fullpath')));

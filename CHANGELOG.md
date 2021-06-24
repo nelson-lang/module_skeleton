@@ -1,3 +1,8 @@
+# 3.0.0 (06/24/2021)
+
+- Nelson 0.5.6 required.
+- .m used everywhere.
+
 # 2.2.0 (06/17/2021)
 
 - Nelson 0.5.6 used.

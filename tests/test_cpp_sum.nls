@@ -4,7 +4,7 @@
 % This file is released under the 3-clause BSD license. See COPYING-BSD.
 %=============================================================================
 if ~ismodule('module_skeleton')
-  run([fileparts(nfilename('fullpathext')), '/../loader.nls']);
+  run([fileparts(nfilename('fullpathext')), '/../loader.m']);
 end
 %=============================================================================
 assert_isequal(nargin('cpp_sum'), 2);

@@ -3,15 +3,15 @@
 %
 % This file is released under the 3-clause BSD license. See COPYING-BSD.
 %=============================================================================
-% remove C/C++ gateway
+% load C/C++ business code used by the gateway
+run([fileparts(nfilename('fullpath')), '/../src/loader.m']);
+%=============================================================================
+% load C/C++ gateway
 MODULE_NAME = 'module_skeleton';
-removegateway([fileparts(nfilename('fullpath')), '/../builtin/', [MODULE_NAME, '_builtin'], getdynlibext()]);
+addgateway([fileparts(nfilename('fullpath')), '/../builtin/', [MODULE_NAME, '_builtin'], getdynlibext()]);
 %=============================================================================
-% remove C/C++ code associated to the previous gateway
-run([fileparts(nfilename('fullpath')), '/../src/unloader.nls']);
-%=============================================================================
-% remove macros
-rmpath([fileparts(nfilename('fullpath')), '/../functions']);
+% load macros
+addpath([fileparts(nfilename('fullpath')), '/../functions']);
 %=============================================================================
 clear('MODULE_NAME');
 %=============================================================================
