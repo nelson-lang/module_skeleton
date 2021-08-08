@@ -11,7 +11,7 @@ MODULE_NAME = 'module_skeleton';
 addgateway([fileparts(nfilename('fullpath')), '/../builtin/', [MODULE_NAME, '_builtin'], getdynlibext()]);
 %=============================================================================
 % load macros
-addpath([fileparts(nfilename('fullpath')), '/../functions']);
+addpath([fileparts(nfilename('fullpath')), '/../functions'], '-frozen');
 %=============================================================================
 clear('MODULE_NAME');
 %=============================================================================

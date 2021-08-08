@@ -1,3 +1,7 @@
+# 3.1.0 (UNRELEASED)
+
+- addpath with `-frozen' argument (recommended when package is not in development).
+
 # 3.0.0 (06/24/2021)
 
 - Nelson 0.5.6 required.
