@@ -10,10 +10,10 @@ jobs:
        shell: cmd
     timeout-minutes: 30
     steps:
-      - name: Download Nelson v0.5.6 (win64)
+      - name: Download Nelson v0.5.9 (win64)
         run: |
           $null = mkdir c:/install
-          (new-object net.webclient).DownloadFile("http://nelson.surge.sh/Nelson-0.5.6.3327-x86-64.exe", "C:\install\Nelson-x86-64.exe")
+          (new-object net.webclient).DownloadFile("https://github.com/Nelson-numerical-software/nelson/releases/download/v0.5.9/Nelson-0.5.9.1457-x86-64.exe", "C:\install\Nelson-x86-64.exe")
 
         shell: powershell
 
