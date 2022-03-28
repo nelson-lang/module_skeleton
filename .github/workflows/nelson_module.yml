@@ -43,7 +43,7 @@ jobs:
           name: module_skeleton-github-action-artifacts-linux
           path: /home/runner/install/artifacts/
 
-  windows:
+  windows_64:
     name: Windows 64 bits
     runs-on: windows-2022
     timeout-minutes: 30    
@@ -52,10 +52,10 @@ jobs:
        shell: cmd
 
     steps:
-      - name: Download Nelson v0.6.2 (win64)
+      - name: Download Nelson v0.6.3 (win64)
         run: |
           $null = mkdir c:/install
-          (new-object net.webclient).DownloadFile("https://github.com/Nelson-numerical-software/nelson/releases/download/v0.6.2/Nelson-0.6.2.1745-x86-64.exe", "C:\install\Nelson-x86-64.exe")
+          (new-object net.webclient).DownloadFile("https://github.com/Nelson-numerical-software/nelson/releases/download/v0.6.3/Nelson-0.6.3.1844-x86-64.exe", "C:\install\Nelson-x86-64.exe")
         shell: powershell
 
       - name: Install Nelson
