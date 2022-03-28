@@ -3,18 +3,59 @@ name: Nelson CI
 on: [push]
 
 jobs:
-  build:
-    runs-on: windows-latest
+
+  ubuntu:
+    name: Ubuntu-20.04 Focal
+    runs-on: ubuntu-20.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Install Nelson as Snap 
+        run: |
+          sudo snap install nelson
+          sudo snap connect nelson:home
+          sudo snap connect nelson:removable-media
+
+      - uses: actions/checkout@v2
+
+      - name: creates artifacts directory
+        run: |
+          mkdir -p /home/runner/install/artifacts
+
+      - name: build and install module
+        run: |
+          nelson -cli --quiet -e "nmm('install', getenv('GITHUB_WORKSPACE'));quit"
+
+      - name: package module
+        run: |
+          nelson -cli --quiet -e "nmm('package', 'module_skeleton', '/home/runner/install/artifacts');quit"
+
+      - name: run tests
+        run: |
+          nelson -cli --quiet -e "test_run('module_skeleton', 'all_tests', '/home/runner/install/artifacts/tests_results.xml');quit"
+
+      - name: run benchs
+        run: |
+          nelson -cli --quiet -e "test_run('module_skeleton', 'benchs', '/home/runner/install/artifacts/benchs_results.xml');quit"
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: module_skeleton-github-action-artifacts-linux
+          path: /home/runner/install/artifacts/
+
+  windows_64:
+    name: Windows 64 bits
+    runs-on: windows-2022
+    timeout-minutes: 30    
     defaults:
       run:
        shell: cmd
-    timeout-minutes: 30
+
     steps:
-      - name: Download Nelson v0.5.9 (win64)
+      - name: Download Nelson v0.6.3 (win64)
         run: |
           $null = mkdir c:/install
-          (new-object net.webclient).DownloadFile("https://github.com/Nelson-numerical-software/nelson/releases/download/v0.5.9/Nelson-0.5.9.1457-x86-64.exe", "C:\install\Nelson-x86-64.exe")
-
+          (new-object net.webclient).DownloadFile("https://github.com/Nelson-numerical-software/nelson/releases/download/v0.6.3/Nelson-0.6.3.1844-x86-64.exe", "C:\install\Nelson-x86-64.exe")
         shell: powershell
 
       - name: Install Nelson
@@ -48,3 +89,4 @@ jobs:
         with:
           name: module_skeleton-github-action-artifacts
           path: c:/install/artifacts/
+
