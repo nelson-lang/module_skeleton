@@ -1,3 +1,8 @@
+# 4.0.0 (02/25/2023)
+
+- Nelson 0.7.2 required.
+
+
 # 3.1.0 (03/26/2022)
 
 - [#6](https://github.com/Nelson-numerical-software/module_skeleton_basic/issues/6) add Github CI action for nelson skeleton basic on linux
