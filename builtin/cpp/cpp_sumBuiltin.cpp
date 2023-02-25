@@ -7,6 +7,7 @@
 #include "cpp_sum.hpp"
 #include "Error.hpp"
 #include "Validators.hpp"
+#include "InputOutputArgumentsCheckers.hpp"
 //=============================================================================
 ArrayOfVector cpp_sumBuiltin(int nLhs, const ArrayOfVector& argIn)
 {
