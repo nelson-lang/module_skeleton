@@ -3,15 +3,16 @@
 %
 % This file is released under the 3-clause BSD license. See COPYING-BSD.
 %=============================================================================
-% load C/C++ business code used by the gateway
-run([fileparts(nfilename('fullpath')), '/../src/loader.m']);
+if ~ismodule('module_skeleton')
+  run([fileparts(nfilename('fullpathext')), '/../loader.m']);
+end
 %=============================================================================
-% load C/C++ gateway
-MODULE_NAME = 'module_skeleton';
-addgateway([fileparts(nfilename('fullpath')), '/../builtin/', [MODULE_NAME, '_builtin'], getdynlibext()], MODULE_NAME);
+assert_isequal(nargin('macro_sum'), -1);
+assert_isequal(nargout('macro_sum'), -1);
 %=============================================================================
-% load macros
-addpath([fileparts(nfilename('fullpath')), '/../functions'], '-frozen');
+assert_isequal(macro_sum(3, 2), 5);
 %=============================================================================
-clear('MODULE_NAME');
+assert_checkerror('macro_sum(3, 2, 4)', _('Wrong number of input arguments.'));
+msg = [sprintf(_('Invalid input argument at position %d.'), 1), char(10),  _('Value must be scalar or empty.')];
+assert_checkerror('macro_sum([3, 4], 2)', msg);
 %=============================================================================

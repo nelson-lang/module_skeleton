@@ -16,7 +16,7 @@ jobs:
           sudo snap connect nelson:home
           sudo snap connect nelson:removable-media
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: creates artifacts directory
         run: |
@@ -52,17 +52,17 @@ jobs:
        shell: cmd
 
     steps:
-      - name: Download Nelson v0.6.3 (win64)
+      - name: Download Nelson v0.7.2 (win64)
         run: |
           $null = mkdir c:/install
-          (new-object net.webclient).DownloadFile("https://github.com/Nelson-numerical-software/nelson/releases/download/v0.6.3/Nelson-0.6.3.1844-x86-64.exe", "C:\install\Nelson-x86-64.exe")
+          (new-object net.webclient).DownloadFile("https://github.com/Nelson-numerical-software/nelson/releases/download/v0.7.2/Nelson-0.7.2.2774-x86-64.exe", "C:\install\Nelson-x86-64.exe")
         shell: powershell
 
       - name: Install Nelson
         run: |
           C:/install/Nelson-x86-64.exe /SP- /SILENT /DIR="c:/install/Nelson"
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: creates artifacts directory
         run: |
