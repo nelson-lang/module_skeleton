@@ -6,7 +6,7 @@ This module is released under the 3-clause BSD license.
 
 You can install in Nelson:
 ```
-nmm('install', 'https://github.com/Nelson-numerical-software/module_skeleton#master')
+nmm('install', 'https://github.com/nelson-lang/module_skeleton#master')
 ```
 
 ## Build module:

@@ -5,7 +5,7 @@
 
 # 3.1.0 (03/26/2022)
 
-- [#6](https://github.com/Nelson-numerical-software/module_skeleton_basic/issues/6) add Github CI action for nelson skeleton basic on linux
+- [#6](https://github.com/nelson-lang/module_skeleton_basic/issues/6) add Github CI action for nelson skeleton basic on linux
 
 - `addpath` with `-frozen` (recommended when package is not in development).
 
@@ -21,7 +21,7 @@
 
 # 2.1.0 (05/25/2021)
 
-- [fix #2](https://github.com/Nelson-numerical-software/module_skeleton/issues/2) Github CI and artefacts.
+- [fix #2](https://github.com/nelson-lang/module_skeleton/issues/2) Github CI and artefacts.
 - remove appveyor CI.
 - add bench example.
 

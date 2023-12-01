@@ -11,12 +11,12 @@
   "author": {
     "name": "Allan CORNET",
     "email": "nelson.numerical.computation@gmail.com",
-    "url": "https://nelson-numerical-software.github.io/nelson-website/"
+    "url": "https://nelson-lang.github.io/nelson-website/"
   },
   "license": "BSD",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nelson-numerical-software/module_skeleton.git"
+    "url": "git+https://github.com/nelson-lang/module_skeleton.git"
   },
   "keywords": [
     "interpreter",
@@ -26,8 +26,8 @@
     "skeleton"
   ],
   "bugs": {
-    "url": "https://github.com/Nelson-numerical-software/module_skeleton/issues"
+    "url": "https://github.com/nelson-lang/module_skeleton/issues"
   },
-  "homepage": "https://github.com/Nelson-numerical-software/module_skeleton",
+  "homepage": "https://github.com/nelson-lang/module_skeleton",
   "dependencies": {}
 }
