@@ -5,8 +5,8 @@ on: [push]
 jobs:
 
   ubuntu:
-    name: Ubuntu-20.04 Focal
-    runs-on: ubuntu-20.04
+    name: Ubuntu-22.04 Focal
+    runs-on: ubuntu-22.04
     timeout-minutes: 30
 
     steps:
@@ -16,7 +16,7 @@ jobs:
           sudo snap connect nelson:home
           sudo snap connect nelson:removable-media
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: creates artifacts directory
         run: |
@@ -38,7 +38,7 @@ jobs:
         run: |
           nelson -cli --quiet -e "test_run('module_skeleton', 'benchs', '/home/runner/install/artifacts/benchs_results.xml');quit"
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: module_skeleton-github-action-artifacts-linux
           path: /home/runner/install/artifacts/
@@ -52,17 +52,17 @@ jobs:
        shell: cmd
 
     steps:
-      - name: Download Nelson v0.7.2 (win64)
+      - name: Download Nelson v1.2.0 (win64)
         run: |
           $null = mkdir c:/install
-          (new-object net.webclient).DownloadFile("https://github.com/nelson-lang/nelson/releases/download/v0.7.2/Nelson-0.7.2.2774-x86-64.exe", "C:\install\Nelson-x86-64.exe")
+          (new-object net.webclient).DownloadFile("https://github.com/nelson-lang/nelson/releases/download/v1.2.0/Nelson-1.2.0.3744-x86-64.exe", "C:\install\Nelson-x86-64.exe")
         shell: powershell
 
       - name: Install Nelson
         run: |
-          C:/install/Nelson-x86-64.exe /SP- /SILENT /DIR="c:/install/Nelson"
+          C:/install/Nelson-x86-64.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /DIR="c:/install/Nelson"
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: creates artifacts directory
         run: |
@@ -85,7 +85,7 @@ jobs:
         run: |
           "c:/install/Nelson/bin/x64/nelson-adv-cli" --noipc --quiet -e "test_run('module_skeleton', 'benchs', 'c:/install/artifacts/benchs_results.xml');quit"
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: module_skeleton-github-action-artifacts
           path: c:/install/artifacts/
