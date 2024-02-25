@@ -16,7 +16,7 @@ jobs:
           sudo snap connect nelson:home
           sudo snap connect nelson:removable-media
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: creates artifacts directory
         run: |
@@ -38,7 +38,7 @@ jobs:
         run: |
           nelson -cli --quiet -e "test_run('module_skeleton', 'benchs', '/home/runner/install/artifacts/benchs_results.xml');quit"
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: module_skeleton-github-action-artifacts-linux
           path: /home/runner/install/artifacts/
@@ -62,7 +62,7 @@ jobs:
         run: |
           C:/install/Nelson-x86-64.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /DIR="c:/install/Nelson"
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: creates artifacts directory
         run: |
@@ -85,7 +85,7 @@ jobs:
         run: |
           "c:/install/Nelson/bin/x64/nelson-adv-cli" --noipc --quiet -e "test_run('module_skeleton', 'benchs', 'c:/install/artifacts/benchs_results.xml');quit"
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: module_skeleton-github-action-artifacts
           path: c:/install/artifacts/
